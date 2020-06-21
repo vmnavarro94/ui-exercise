@@ -5,10 +5,8 @@ import { getAllEmails, getEmailsByTag , formatDate } from '../../Services/emailS
 
 import './MessageList.scss';
 
-let checkedMails = 0;
-
 const MessageList = props => {
-    const { history } = props;
+    const { history, checkedMails, countChecked } = props;
 
     const tag = history.location.pathname.split('/')[1] === 'tag' && history.location.pathname.split('/')[2];
 
@@ -16,13 +14,13 @@ const MessageList = props => {
         if(event.target.type === 'checkbox')
             return;
         event.preventDefault();
+        countChecked(0);
         history.push(`${history.location.pathname}/${id}`);
     }
 
-    const handleCheckChange = event => {debugger;
-        const { isSomethingChecked } = props;
-        event.target.checked ? checkedMails++ : checkedMails--;
-        isSomethingChecked(checkedMails);
+    const handleCheckChange = event => {
+        console.log(checkedMails);
+        countChecked(event.target.checked ? checkedMails+1 : checkedMails-1);
     }
 
     const printMail = mail => (

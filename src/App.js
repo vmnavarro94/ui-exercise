@@ -16,15 +16,15 @@ const history = createBrowserHistory();
 class App extends Component {
 
   state = {
-    isSomethingChecked: false,
+    checkedMails: 0,
   }
 
-  verifyIfSomethingChecked = checkedMails => {
-    this.setState({isSomethingChecked: checkedMails > 0}); 
+  countChecked = checkedMails => {
+    this.setState({checkedMails}); 
   }
 
   render() {
-    const { isSomethingChecked } = this.state;
+    const { checkedMails } = this.state;
     return (
       <BrowserRouter history={history}>
         <div className="layout">
@@ -37,11 +37,11 @@ class App extends Component {
           <div className='options'>
             <Switch>
               <Route exact path='/inbox'>
-                <OnListingOptions isCheck={isSomethingChecked}/>
+                <OnListingOptions isCheck={checkedMails > 0}/>
               </Route>
               <Route exact path='/inbox/:mailId' component={OnMessageOptions} />
               <Route exact path='/tag/:tag'>
-                <OnListingOptions isCheck={isSomethingChecked}/>
+                <OnListingOptions isCheck={checkedMails > 0}/>
               </Route>
               <Route exact path='/tag/:tag/:mailId' component={OnMessageOptions}/>
             </Switch>
@@ -51,9 +51,9 @@ class App extends Component {
           </div>
           <div className='content'>
             <Switch>
-              <Route exact path="/inbox" render={(props) => <MessageList isSomethingChecked={this.verifyIfSomethingChecked} {...props} />}/>
+              <Route exact path="/inbox" render={(props) => <MessageList checkedMails={this.state.checkedMails} countChecked={this.countChecked} {...props} />}/>
               <Route path="/inbox/:id" component={Message} />
-              <Route exact path="/tag/:tag" render={(props) => <MessageList isSomethingChecked={this.verifyIfSomethingChecked} {...props} />}/>
+              <Route exact path="/tag/:tag" render={(props) => <MessageList checkedMails={this.state.checkedMails} countChecked={this.countChecked} {...props} />}/>
               <Route path="/tag/:tag/:id" component={Message} />
               <Redirect exact from="/" to="/inbox" />
             </Switch>
