@@ -1,0 +1,51 @@
+.layout {
+    display: grid;
+    grid-template: 
+        'header header' 4rem 
+        'compose options' 3rem 
+        'tags content' auto / .5fr 5fr;
+    @media (max-width: 770px) {
+        grid-template:
+            'header' 3rem
+            'tags' auto
+            'options' auto
+            'content' 1fr / 1fr;
+    }
+}
+
+.header {
+    grid-area: header;
+    max-width: 100vw;
+}
+
+.options {
+    grid-area: options;
+    border-bottom: 1px #E7E7E7E7 solid;
+    display: flex;
+    align-items: center; 
+    height: 100%;
+
+    @media (max-width: 770px) {
+        border-bottom: 0;
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+}
+
+.compose {
+    grid-area: compose;
+    border-bottom: 1px #E7E7E7E7 solid;
+    height: 100%;
+    @media (max-width: 770px) {
+        display: none;
+    }
+}
+
+.tags {
+    grid-area: tags;
+}
+
+.content {
+    grid-area: content;
+    //max-width: 90vw;
+}

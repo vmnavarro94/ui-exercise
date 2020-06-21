@@ -1,0 +1,73 @@
+ .msgContainer {
+     margin-right: 1rem;
+     font-size: .85em;
+     @media (max-width: 770px) {
+         margin: 0;
+         margin-top: .5rem;
+     }
+ }
+
+ .msgHeader {
+     display: flex;
+     margin-bottom: 1rem;
+     padding: .75rem 0;
+     padding-left: 1rem;
+     align-items: center;
+     border-bottom: 1px #E7E7E7E7 solid;
+     @media (max-width: 770px) {
+         border-top: 1px #E7E7E7E7 solid;
+     }
+ }
+
+ .msgSubject {
+     flex: 0 1;
+     font-size: 1.3rem;
+     white-space: nowrap;
+     @media (max-width: 770px) {
+         font-size: 1.25rem;
+         white-space: normal;
+         flex: 1 0;
+     }
+ }
+
+ .msgTags {
+     padding: 0 1rem;
+     flex: 1 0;
+     @media (max-width: 770px) {
+         flex: 0 0;
+         white-space: normal;
+     }
+ }
+
+ .msgContent {
+    display: grid;
+    grid-template:
+        'avatar from date' 2rem
+        '. body body' 1fr / 2rem 1fr min-content;
+    grid-column-gap: 1rem;
+    padding-left: 1rem;
+    border-bottom: 1px #E7E7E7E7 solid;
+    @media (max-width: 770px) {
+        grid-template-areas: 
+            'avatar from date'
+            'body body body';
+    }
+ }
+
+ .msgAvatar {
+     grid-area: avatar;
+ }
+
+ .msgFrom {
+    grid-area: from;
+    font-weight: 600;
+  }
+  
+  .msgDate {
+    grid-area: date;
+    white-space: nowrap;
+  }
+  
+  .msgBody {
+    grid-area: body;
+  }
