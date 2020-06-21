@@ -1,6 +1,9 @@
 import React from 'react';
 
+import Tag from '../Tag/Tag';
+
 import './MessageList.scss';
+
 const printMail = () => (
     <div className='mail'>
         <div className='detail check'>
@@ -10,7 +13,7 @@ const printMail = () => (
             bob.smith@gmail.com
             </div>
         <div className='detail subject'>
-            <span className='tag' title='work'>Work</span>
+            <Tag/>
             <div className='subjText'>Your flight confirmation</div>
             <div className='preview'>
                 <span className='separator'>&nbsp;- </span>

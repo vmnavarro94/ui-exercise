@@ -48,20 +48,6 @@
     }
 }
 
-.tag {
-    padding: .12rem .5rem;
-    margin-right: .5rem;
-    margin-top: -.06rem;
-    margin-bottom: -.06rem;
-    font-size: .8em;
-    text-transform: capitalize;
-    background-color: #DDDDDD;
-    @media (max-width: 770px) {
-        order: 1;
-        margin: 0 .5rem 0 0;
-    }
-}
-
 .subjText {
     white-space: nowrap;
     overflow: hidden;
