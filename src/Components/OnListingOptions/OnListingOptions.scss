@@ -1,0 +1,12 @@
+.group {
+    border-right: 1px #E7E7E7E7 solid;
+    height: 25px;
+    display: inline-block;
+    .button {
+        cursor: pointer;
+        position: relative;
+        bottom: 12px;
+        color: rgba(0, 0, 0, 0.54);
+    }
+}
+

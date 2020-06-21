@@ -3,9 +3,7 @@ import MailOutlineIcon from '@material-ui/icons/MailOutline';
 
 import './Logo.scss';
 
-const title = 'VnavMail';
-
-
+const title = 'SalesMail';
 
 const Logo = () => (
     <div className='logo'>

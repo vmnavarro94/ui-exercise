@@ -8,7 +8,7 @@
 
 .mail {
     display: grid;
-    grid-template: 'check from subject date' auto / .5fr 2fr 6.5fr 1fr;
+    grid-template: 'check from subject date' auto / 2.5rem 11rem 1fr min-content;
     border-bottom: 1px #E7E7E7E7 solid;
     @media (max-width: 770px) {
         grid-template:
@@ -43,6 +43,7 @@
 .subject {
     grid-area: subject;
     display: flex;
+    overflow: hidden;
     @media (max-width: 770px) {
         flex-wrap: wrap;
     }
@@ -59,6 +60,7 @@
 .preview {
     color: #777777;
     white-space: nowrap;
+    overflow: hidden;
     @media (max-width: 770px) {
         display: block;
         overflow: hidden;

@@ -3,7 +3,7 @@
     grid-template: 
         'header header' 4rem 
         'compose options' 3rem 
-        'tags content' auto / 1fr 9fr;
+        'tags content' auto / .5fr 5fr;
     @media (max-width: 770px) {
         grid-template:
             'header' 3rem
@@ -21,7 +21,6 @@
 .options {
     grid-area: options;
     border-bottom: 1px #E7E7E7E7 solid;
-    ///max-width: 90vw;
     display: flex;
     align-items: center; 
     height: 100%;

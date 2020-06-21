@@ -1,10 +1,25 @@
 .text {
+    cursor: pointer;
     display: flex;
     height: 100%;
-    padding: 0 1rem;
+    padding: 0 1.5rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
     line-height: 1;
     align-items: center;
-    color: #4885ED;
-    font-size: 1.2em;
+    font-size: 1em;
     font-weight: 500;
+    border: 1px #E7E7E7E7 solid;
+    border-top: 0;
+    border-radius: 40px;
+    &:before {
+        background-image: url('https://www.gstatic.com/images/icons/material/colored_icons/1x/create_32dp.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 32px;
+        content: '';
+        display: block;
+        min-width: 2rem;
+        height: 2rem;
+    }
 }

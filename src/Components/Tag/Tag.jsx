@@ -2,8 +2,8 @@ import React from 'react';
 
 import './Tag.scss';
 
-const Tag = () => (
-    <span className='tag' title='work'>Work</span>
+const Tag = ({tag}) => (
+    <span className='tag' title={tag}>{tag}</span>
 );
 
 export default Tag;
