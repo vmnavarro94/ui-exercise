@@ -1,0 +1,100 @@
+.mailList {
+    margin-right: 1rem;
+    @media (max-width: 770px) {
+        margin: 0;
+        margin-top: .5rem;
+    }
+}
+
+.mail {
+    display: grid;
+    grid-template: 'check from subject date' auto / .5fr 2fr 6.5fr 1fr;
+    border-bottom: 1px #E7E7E7E7 solid;
+    @media (max-width: 770px) {
+        grid-template:
+            'check from date' auto
+            'check subject subject' /.5fr 5fr min-content;
+        grid-row-gap: .25rem;
+        padding: .75rem 0;
+        &:first-child {
+            border-top: 1px #E7E7E7E7 solid;
+        }
+    }
+}
+
+.detail {
+    cursor: pointer;
+    padding: .75rem 0;
+    font-size: .85rem;
+    @media (max-width: 770px) {
+        padding: 0;
+    }
+}
+
+.check {
+    grid-area: check;
+    text-align: center;
+}
+
+.from {
+    grid-area: from;
+}
+
+.subject {
+    grid-area: subject;
+    display: flex;
+    @media (max-width: 770px) {
+        flex-wrap: wrap;
+    }
+}
+
+.tag {
+    padding: .12rem .5rem;
+    margin-right: .5rem;
+    margin-top: -.06rem;
+    margin-bottom: -.06rem;
+    font-size: .8em;
+    text-transform: capitalize;
+    background-color: #DDDDDD;
+    @media (max-width: 770px) {
+        order: 1;
+        margin: 0 .5rem 0 0;
+    }
+}
+
+.subjText {
+    white-space: nowrap;
+    overflow: hidden;
+    @media (max-width: 770px) {
+        margin-bottom: .25rem;
+    }
+}
+
+.preview {
+    color: #777777;
+    white-space: nowrap;
+    @media (max-width: 770px) {
+        display: block;
+        overflow: hidden;
+        margin-bottom: .25rem;
+        margin-right: .5rem;
+    }
+}
+
+.separator {
+    @media (max-width: 770px) {
+        display: none;
+    }
+}
+
+.date {
+    grid-area: date;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    text-align: right;
+    white-space: nowrap;
+    @media (max-width: 770px) {
+        padding-right: .5rem;
+        padding-left: .5rem;
+    }
+}

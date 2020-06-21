@@ -1,0 +1,28 @@
+.menu {
+    padding: 1rem;
+}
+
+.link {
+    display: block;
+    padding: .25rem 0;
+    margin-bottom: .25rem;
+    color: inherit;
+    position: relative;
+    text-decoration: none;
+    text-transform: capitalize;
+
+    &[class~='active'] {
+        font-weight: 600;
+        color: #DB3236;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: -1rem;
+            width: 0.25rem;
+            background-color: #DB3236;
+        }
+    }
+}

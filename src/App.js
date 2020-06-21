@@ -1,25 +1,46 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom';
+
+import Logo from './Components/Logo/Logo';
+import Compose from './Components/Compose/Compose';
+import OnListingOptions from './Components/OnListingOptions/OnListingOptions';
+import OnMessageOptions from './Components/OnMessageOptions/OnMessageOptions';
+import Menu from './Components/Menu/Menu';
+import MessageList from './Components/MessageList/MessageList';
+import './App.scss';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="layout">
+        <div className="header">
+          <Logo/>
+        </div>
+        <div className='compose'>
+          <Compose/>
+        </div>
+        <div className='options'>
+          <Switch>
+            <Route exact path='/inbox' component={OnListingOptions}/>
+            <Route exact path='/inbox/:mailId' component={OnMessageOptions}/>
+            <Route exact path='/tag/:tag' component={OnListingOptions}/>
+            <Route exact path='/tag/:tag/:mailId' component={OnMessageOptions}/>
+          </Switch>
+        </div>
+        <div className='tags'>
+          <Menu/>
+        </div>
+        <div className='content'>
+          <Switch>
+            <Route path="/inbox" component={MessageList} exact />
+            <Route path="/inbox/:id" component={Logo} />
+            <Route path="/tag/:tag" component={MessageList} exact />
+            <Route path="/tag/:tag/:id" component={Logo} />
+            <Redirect from="/" to="/inbox" exact />
+          </Switch>
+        </div>
+      </div>
+    </BrowserRouter>
   );
 }
 
